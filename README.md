@@ -16,7 +16,7 @@ Clone or copy this starter, then run the bootstrap from a normal shell — no AI
 .\init.ps1 $HOME\projects\my-new-thing   # Windows / PowerShell
 ```
 
-Move into the new project and start your conversational AI agent (Claude Code, Codex, Cursor, Aider, etc.) from there:
+Move into the new project and start your conversational AI agent (Claude Code, Codex, etc.) from there:
 
 ```sh
 cd ~/projects/my-new-thing
