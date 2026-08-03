@@ -41,6 +41,10 @@ if [[ ! -f .ralph/prompt.md ]]; then
   echo "error: .ralph/prompt.md not found in $MAIN_DIR." >&2
   exit 1
 fi
+if [[ ! -f .ralph/gate.sh ]]; then
+  echo "error: .ralph/gate.sh not found in $MAIN_DIR — integration would have nothing to verify against." >&2
+  exit 1
+fi
 
 base=$(git symbolic-ref --quiet --short HEAD) || {
   echo "error: detached HEAD; check out the integration branch first." >&2

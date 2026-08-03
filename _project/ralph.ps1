@@ -91,6 +91,9 @@ function Remove-OwnClaims {
 if (-not (Test-Path -LiteralPath '.ralph/prompt.md')) {
     Fail 1 "error: .ralph/prompt.md not found in $PSScriptRoot."
 }
+if (-not (Test-Path -LiteralPath '.ralph/gate.ps1')) {
+    Fail 1 "error: .ralph/gate.ps1 not found in $PSScriptRoot — integration would have nothing to verify against."
+}
 
 $Base = git symbolic-ref --quiet --short HEAD
 if ($LASTEXITCODE -ne 0 -or -not $Base) {
