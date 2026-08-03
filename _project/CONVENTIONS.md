@@ -16,15 +16,9 @@ Unit tests follow the **3A pattern**:
 
 Fixtures handle Arrange only. The Act call must be visible in the test body, not hidden inside a fixture helper.
 
-## Lint / Format / Test Commands
+## Pass Gate
 
-The commands below must pass before a task is marked complete in `PRD.md`. Replace the placeholder with the actual commands once the stack is chosen.
-
-```sh
-# placeholder — replace with the real commands for this project
-# e.g. cargo fmt --check && cargo clippy -- -D warnings && cargo test
-true
-```
+The executable pass gate lives in `.ralph/gate.sh` and `.ralph/gate.ps1`, kept behaviorally identical. It must exit 0 before a task is marked complete in `PRD.md`, and the run integration re-runs it. The starter ships both as placeholders — put the real commands in once the stack is chosen (e.g. `cargo fmt --check && cargo clippy -- -D warnings && cargo test`).
 
 ## Commit Messages
 

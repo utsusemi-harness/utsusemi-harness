@@ -12,6 +12,6 @@ This is the Product Requirements Document. It owns three things: the project's *
 
 ## Tasks
 
-Each task is one concern. Tasks are processed in order subject to their dependencies. Completed tasks (`- [x]`) are immutable history — corrections become new tasks, never edits to old ones.
+Each task is one concern and carries a stable id — `- [ ] T<n>: …`, where `<n>` is the next unused number at append time. Ids are never reused or renumbered. An open task may be amended until a run claims it (`ls .ralph/claims`); from then on it is frozen — changes become new tasks — and completed tasks (`- [x]`) are immutable history. Tasks are processed in order subject to their dependencies.
 
-- [ ] Define the first task.
+- [ ] T1: Define the first task.

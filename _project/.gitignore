@@ -2,3 +2,8 @@
 .DS_Store
 *.swp
 *.swo
+
+# Ralph run isolation
+.ralph/worktrees/
+.ralph/integrate.lock/
+.ralph/claims/

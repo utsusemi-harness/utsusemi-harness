@@ -41,8 +41,8 @@ The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you throu
 | `CONVENTIONS.md` | How code is written (test pattern, lint, commits) |
 | `AGENTS.md` | Ralph Loop philosophy + first-time setup hints |
 | `CLAUDE.md` | One-line `@AGENTS.md` import so Claude Code reads the same guidance |
-| `prompt.md` | Ralph's per-run instructions (the run contract) |
-| `ralph.sh` / `ralph.ps1` | Ralph's one-shot runner; agent CLI is overridable via `RALPH_CMD` |
+| `.ralph/` | Ralph's machinery: `prompt.md` (the run contract), `gate.sh` / `gate.ps1` (the executable pass gate), `env.sh` / `env.ps1` (repo knobs) |
+| `ralph.sh` / `ralph.ps1` | Ralph's one-shot runner: isolates each run in a worktree, then integrates it (rebase onto the integration branch → pass gate → fast-forward) |
 | `.gitignore` | Standard ignores |
 
 ## Departures from the original Ralph
