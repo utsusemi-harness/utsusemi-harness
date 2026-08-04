@@ -28,6 +28,8 @@ When the human asks for implementation (or says to "run Ralph"), kick the runner
 - Parallel runs are supported. When you are orchestrating, assigning each run a disjoint working set via guidance is the primary mode; the per-task claim protocol (`.ralph/claims/`, enforced at integration) is the backstop that keeps self-selecting runs off each other's tasks.
 - Relay the substance of Ralph's report to the human and decide together whether to kick the next run.
 
+All of the above is Ralph — the charter, the claims, the run worktree, the gate, the deterministic integration. `ralph.sh` / `ralph.ps1` is its reference engine, not its definition: when the script cannot run, or your harness offers a clearly better engine (worktree-isolated subagents, for instance), drive the same protocol through that engine — same charter verbatim, same claims, same integration steps, same escalation. Writing the implementation yourself in the spec conversation is not an engine swap.
+
 ## First-time setup
 
 When a fresh project from `ralph-loop-starter` is being set up, several skeletons need real values. Walk the human through them in this order:

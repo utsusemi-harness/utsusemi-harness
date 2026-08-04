@@ -49,9 +49,11 @@ The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you throu
 
 The original Ralph is a bash loop — `while :; do cat PROMPT.md | claude-code ; done` — with one hard rule: one item per loop. The loop itself never checks for completion; it spins until Ralph runs out of things to do in its plan file. Both the tight granularity and the relentless repetition were devices for an era of scarce context.
 
-This starter departs from that form in two ways:
+This starter departs from that form in four ways:
 
 - **The `while` is gone from the shell.** `ralph.sh` runs Ralph **once**: a fresh context wakes up, selects a working set of open tasks (or follows guidance passed as arguments), lands it commit by commit, reports, and exits. Whether and when the next run happens is decided in the spec conversation, not by a counter.
 - **One working set per run, not one item.** The one-item rule was budgeting for scarce context; with that scarcity receded, Ralph is trusted to pick a coherent group of related tasks per run — a divergence made for the same reason the rule existed: spend the context window where it pays.
+- **Runs are parallel by default.** The original loop was strictly serial — one context alive at a time. Here each run works in its own worktree, integration is serialized by a lock, and per-task claims keep concurrent runs off each other's tasks; kicking several runs at once is a normal mode, not a hack.
+- **`ralph.sh` is an engine, not the technique.** Treating Ralph as a protocol — the run charter, the claims, the worktree, the gate, the deterministic integration — demotes the script to its reference engine, no longer a requirement. When it cannot run, or a harness offers a clearly better engine (worktree-isolated subagents, for instance), the same protocol driven through that engine is still Ralph.
 
 What survives is what made Ralph work in the first place: an executor that begins every run with amnesia and trusts the files — PRD, spec, conventions, git history — as its only memory. That, not the shell loop, was always the heart of the technique.
