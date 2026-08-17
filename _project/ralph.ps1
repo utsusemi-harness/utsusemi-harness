@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# ralph.ps1 — Ralph one-shot runner; each run works in its own worktree.
+# ralph.ps1 — one-shot implementation runner; each run works in its own worktree.
 #
 # Usage:
 #   ./ralph.ps1 [guidance...]
@@ -129,10 +129,10 @@ else {
 $Prompt = Get-Content -LiteralPath (Join-Path $Wt '.ralph/prompt.md') -Raw
 if ($Guidance -and $Guidance.Count -gt 0) {
     $Prompt += "`n`n## Guidance from the invoker`n`n" + ($Guidance -join ' ')
-    Write-Host "=== Ralph run $RunId (guided) ==="
+    Write-Host "=== Implementation run $RunId (guided) ==="
 }
 else {
-    Write-Host "=== Ralph run $RunId ==="
+    Write-Host "=== Implementation run $RunId ==="
 }
 Write-Host ""
 

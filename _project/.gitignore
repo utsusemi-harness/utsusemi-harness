@@ -3,7 +3,7 @@
 *.swp
 *.swo
 
-# Ralph run isolation
+# Run isolation
 .ralph/worktrees/
 .ralph/integrate.lock/
 .ralph/claims/

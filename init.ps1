@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# init.ps1 — bootstrap a new Ralph Loop project from this template (PowerShell).
+# init.ps1 — bootstrap a new project from this template (PowerShell).
 #
 # Usage:
 #   ./init.ps1 <destination-path>
@@ -61,5 +61,5 @@ Next steps:
   # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
   #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational LLM.
   # 2. Stage and commit the initial files when ready.
-  # 3. Ask your agent to run Ralph (.\ralph.ps1) when the specs are in shape.
+  # 3. Ask your agent to start an implementation run (.\ralph.ps1) when the specs are in shape.
 "@

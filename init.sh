@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# init.sh — bootstrap a new Ralph Loop project from this template.
+# init.sh — bootstrap a new project from this template.
 #
 # Usage:
 #   ./init.sh <destination-path>
@@ -57,5 +57,5 @@ Next steps:
   # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
   #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational LLM.
   # 2. Stage and commit the initial files when ready.
-  # 3. Ask your agent to run Ralph (./ralph.sh) when the specs are in shape.
+  # 3. Ask your agent to start an implementation run (./ralph.sh) when the specs are in shape.
 EOF

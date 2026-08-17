@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ralph.sh — Ralph one-shot runner; each run works in its own worktree.
+# ralph.sh — one-shot implementation runner; each run works in its own worktree.
 #
 # Usage:
 #   ./ralph.sh [guidance...]
@@ -128,9 +128,9 @@ fi
 prompt=$(cat "$wt/.ralph/prompt.md")
 if (( $# > 0 )); then
   prompt+=$'\n\n## Guidance from the invoker\n\n'"$*"
-  echo "=== Ralph run $run_id (guided) ==="
+  echo "=== Implementation run $run_id (guided) ==="
 else
-  echo "=== Ralph run $run_id ==="
+  echo "=== Implementation run $run_id ==="
 fi
 echo ""
 
