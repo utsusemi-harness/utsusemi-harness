@@ -27,7 +27,7 @@ A useful first prompt is something like:
 
 > _I just initialized a project from ralph-loop-starter here. I want to build [a short description of what you have in mind]. Walk me through first-time setup._
 
-The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you through replacing `{{PROJECT_NAME}}` placeholders and filling in the spec documents based on what you want to build. When the specs are in shape, ask the agent to start an implementation run — it kicks `./ralph.sh` (or `.\ralph.ps1`) while the spec conversation continues — or run the script yourself.
+The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you through replacing `{{PROJECT_NAME}}` placeholders and filling in the spec documents based on what you want to build. When the specs are in shape, ask the agent to start an implementation run — it kicks `./utsusemi.sh` (or `.\utsusemi.ps1`) while the spec conversation continues — or run the script yourself.
 
 ## What gets created
 
@@ -41,8 +41,8 @@ The agent reads `AGENTS.md` / `CLAUDE.md` in the new project and walks you throu
 | `CONVENTIONS.md` | How code is written (test pattern, lint, commits) |
 | `AGENTS.md` | Harness guidance + first-time setup hints |
 | `CLAUDE.md` | One-line `@AGENTS.md` import so Claude Code reads the same guidance |
-| `.ralph/` | Run machinery: `prompt.md` (the run contract), `gate.sh` / `gate.ps1` (the executable pass gate), `env.sh` / `env.ps1` (repo knobs) |
-| `ralph.sh` / `ralph.ps1` | One-shot runner: isolates each run in a worktree, then integrates it (rebase onto the integration branch → pass gate → fast-forward) |
+| `.utsusemi/` | Run machinery: `prompt.md` (the run contract), `gate.sh` / `gate.ps1` (the executable pass gate), `env.sh` / `env.ps1` (repo knobs) |
+| `utsusemi.sh` / `utsusemi.ps1` | One-shot runner: isolates each run in a worktree, then integrates it (rebase onto the integration branch → pass gate → fast-forward) |
 | `.gitignore` | Standard ignores |
 
 ## Departures from Ralph Loop
@@ -51,9 +51,9 @@ The original Ralph Loop is a bash loop — `while :; do cat PROMPT.md | claude-c
 
 This starter departs from that form in four ways:
 
-- **The `while` is gone from the shell.** `ralph.sh` starts an implementation agent **once**: a fresh context wakes up, selects a working set of open tasks (or follows guidance passed as arguments), lands it commit by commit, reports, and exits. Whether and when the next run happens is decided by the conversation or orchestration layer, not by a counter.
+- **The `while` is gone from the shell.** `utsusemi.sh` starts an implementation agent **once**: a fresh context wakes up, selects a working set of open tasks (or follows guidance passed as arguments), lands it commit by commit, reports, and exits. Whether and when the next run happens is decided by the conversation or orchestration layer, not by a counter.
 - **One working set per run, not one item.** The one-item rule was budgeting for scarce context; with that scarcity receded, the implementation agent is trusted to pick a coherent group of related tasks per run.
 - **Runs are parallel by default.** The original loop was strictly serial — one context alive at a time. Here each run works in its own worktree, integration is serialized by a lock, and per-task claims keep concurrent runs off each other's tasks; kicking several runs at once is a normal mode, not a hack.
-- **`ralph.sh` is one engine in a larger harness.** It executes an isolated one-shot run. The surrounding harness decides when runs start and how independent work is composed.
+- **`utsusemi.sh` is one engine in a larger harness.** It executes an isolated one-shot run. The surrounding harness decides when runs start and how independent work is composed.
 
 What survives from Ralph Loop is fresh context for each run, context externalized into files, and the separation of conversation from implementation. The starter keeps its name for historical reasons, but the harness around those ideas has changed substantially.

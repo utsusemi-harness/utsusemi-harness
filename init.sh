@@ -6,7 +6,7 @@
 #
 # Behavior:
 #   1. Copies _project/ to the destination path.
-#   2. Makes ralph.sh executable.
+#   2. Makes utsusemi.sh executable.
 #   3. Runs `git init -b main`.
 #
 # The template files leave {{PROJECT_NAME}} placeholders literal. The
@@ -42,7 +42,7 @@ fi
 mkdir -p "$DEST"
 cp -r "$SOURCE"/. "$DEST"/
 
-chmod +x "$DEST/ralph.sh"
+chmod +x "$DEST/utsusemi.sh"
 
 (
   cd "$DEST"
@@ -57,5 +57,5 @@ Next steps:
   # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
   #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational LLM.
   # 2. Stage and commit the initial files when ready.
-  # 3. Ask your agent to start an implementation run (./ralph.sh) when the specs are in shape.
+  # 3. Ask your agent to start an implementation run (./utsusemi.sh) when the specs are in shape.
 EOF

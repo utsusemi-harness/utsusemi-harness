@@ -4,6 +4,6 @@
 *.swo
 
 # Run isolation
-.ralph/worktrees/
-.ralph/integrate.lock/
-.ralph/claims/
+.utsusemi/worktrees/
+.utsusemi/integrate.lock/
+.utsusemi/claims/

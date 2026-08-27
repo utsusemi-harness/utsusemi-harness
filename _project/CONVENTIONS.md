@@ -18,7 +18,7 @@ Fixtures handle Arrange only. The Act call must be visible in the test body, not
 
 ## Pass Gate
 
-The executable pass gate lives in `.ralph/gate.sh` and `.ralph/gate.ps1`, kept behaviorally identical. It must exit 0 before a task is marked complete in `PRD.md`, and the run integration re-runs it. The starter ships both as placeholders — put the real commands in once the stack is chosen (e.g. `cargo fmt --check && cargo clippy -- -D warnings && cargo test`).
+The executable pass gate lives in `.utsusemi/gate.sh` and `.utsusemi/gate.ps1`, kept behaviorally identical. It must exit 0 before a task is marked complete in `PRD.md`, and the run integration re-runs it. The starter ships both as placeholders — put the real commands in once the stack is chosen (e.g. `cargo fmt --check && cargo clippy -- -D warnings && cargo test`).
 
 ## Commit Messages
 

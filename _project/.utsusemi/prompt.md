@@ -15,7 +15,7 @@ If the workspace already differs from its upstream when you arrive — uncommitt
 4. Claim every task in the set before touching code — other runs may be working in parallel:
 
    ```sh
-   claims="$(git rev-parse --git-common-dir)/../.ralph/claims"
+   claims="$(git rev-parse --git-common-dir)/../.utsusemi/claims"
    mkdir -p "$claims"
    mkdir "$claims/<task-id>" && git branch --show-current > "$claims/<task-id>/owner"
    ```
@@ -28,7 +28,7 @@ If the workspace already differs from its upstream when you arrive — uncommitt
 
 6. Follow `CONVENTIONS.md` for test pattern and commit-message style. If it is still in its placeholder state for a section that matters to the task at hand, stop and report — do not invent conventions silently.
 
-7. Run the repo's pass gate — `./.ralph/gate.sh` (or `./.ralph/gate.ps1` on Windows). Fix any issues until it passes. Do not skip failing checks.
+7. Run the repo's pass gate — `./.utsusemi/gate.sh` (or `./.utsusemi/gate.ps1` on Windows). Fix any issues until it passes. Do not skip failing checks.
 
 8. When everything passes, mark the task as checked (`- [x]`) in `PRD.md`. Do **not** edit completed (`- [x]`) tasks — they are historical. Corrections to past work become new tasks, never edits to old ones.
 
