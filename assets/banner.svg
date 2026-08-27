@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="Utsusemi Harness">
+  <!-- README header, 1200x300. Ground #0F1115, mark #AAB2FF, name knocked
+       out in white. Wordmark is Shippori Mincho; keep a serif fallback.
+       banner.png beside this file was rendered from it with that font loaded;
+       a converter without Shippori Mincho will not match it.
+
+       No tagline on purpose: what this harness is belongs in the README and
+       in the repository description, where it costs one line to change. -->
+  <rect width="1200" height="300" fill="#0F1115"/>
+  <g transform="translate(146.7 66.8) scale(2.6)">
+    <g fill="#AAB2FF" transform="translate(9 0)">
+      <path opacity="0.22" d="M14 6C19 6 23 15 23 27C23 44 18 58 14 58C10 58 5 44 5 27C5 15 9 6 14 6Z"/>
+      <path opacity="0.5"  d="M23 6C28 6 32 15 32 27C32 44 27 58 23 58C19 58 14 44 14 27C14 15 18 6 23 6Z"/>
+      <path                d="M32 6C37 6 41 15 41 27C41 44 36 58 32 58C28 58 23 44 23 27C23 15 27 6 32 6Z"/>
+    </g>
+  </g>
+  <text x="324" y="177" fill="#FFFFFF" font-family="Shippori Mincho, Yu Mincho, Hiragino Mincho ProN, Georgia, serif"
+        font-size="76" letter-spacing="1">Utsusemi Harness</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="Utsusemi">
+  <!-- Utsusemi mark. One shell in front, two afterimages behind it.
+       Ground #0F1115, mark #AAB2FF. Square and full bleed: platforms round
+       the corners themselves. -->
+  <rect width="64" height="64" fill="#0F1115"/>
+  <g transform="translate(32 32) scale(0.72) translate(-32 -32)">
+    <g fill="#AAB2FF" transform="translate(9 0)">
+      <path opacity="0.22" d="M14 6C19 6 23 15 23 27C23 44 18 58 14 58C10 58 5 44 5 27C5 15 9 6 14 6Z"/>
+      <path opacity="0.5"  d="M23 6C28 6 32 15 32 27C32 44 27 58 23 58C19 58 14 44 14 27C14 15 18 6 23 6Z"/>
+      <path                d="M32 6C37 6 41 15 41 27C41 44 36 58 32 58C28 58 23 44 23 27C23 15 27 6 32 6Z"/>
+    </g>
+  </g>
+</svg>

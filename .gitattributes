@@ -7,3 +7,6 @@
 
 # PowerShell counterparts keep CRLF, matching the platform they run on.
 *.ps1 text eol=crlf
+
+# Rendered brand assets.
+*.png binary

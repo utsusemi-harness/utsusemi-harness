@@ -1,4 +1,4 @@
-# utsusemi-harness
+![Utsusemi Harness](assets/banner.png)
 
 A harness that separates _spec_ from _implementation_. You and a conversational agent keep the spec; implementation agents write the code. Neither side waits for the other: you keep writing tasks while several implementation agents land the ones already written.
 
