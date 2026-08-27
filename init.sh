@@ -10,7 +10,7 @@
 #   3. Runs `git init -b main`.
 #
 # The template files leave {{PROJECT_NAME}} placeholders literal. The
-# conversational LLM driving setup is expected to replace them as part of
+# conversational agent driving setup is expected to replace them as part of
 # first-time setup, alongside filling in the substantive spec sections.
 # See AGENTS.md in the generated project for the order of attention.
 #
@@ -55,7 +55,7 @@ Initialized at $DEST
 Next steps:
   cd $DEST
   # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
-  #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational LLM.
+  #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational agent.
   # 2. Stage and commit the initial files when ready.
   # 3. Ask your agent to start an implementation run (./utsusemi.sh) when the specs are in shape.
 EOF

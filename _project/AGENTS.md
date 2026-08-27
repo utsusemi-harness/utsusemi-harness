@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This project uses a harness derived from **Ralph Loop**. It separates spec (human + conversational LLM) from implementation (an implementation agent). Before acting, scan the relevant files in this repo to understand the current state:
+This project uses the [Utsusemi harness](https://github.com/hainet50b/utsusemi-harness). It separates spec (human + conversational agent) from implementation (an implementation agent). Before acting, scan the relevant files in this repo to understand the current state:
 
 - `README.md` — user-facing reference (snapshot, not a contract)
 - `SPEC/` — developer-facing internal reference (snapshot, not a contract). The directory always contains `SPEC/SPEC.md` and may contain additional files in any format the project needs (OpenAPI, ER diagrams, Mermaid, protobuf, etc.); read whatever is in there
@@ -10,16 +10,16 @@ This project uses a harness derived from **Ralph Loop**. It separates spec (huma
 
 ## Principles
 
-- **Spec and implementation are separate concerns.** Spec belongs to the human and the conversational LLM. Implementation belongs to the implementation agent. Do not blur the two.
+- **Spec and implementation are separate concerns.** Spec belongs to the human and the conversational agent. Implementation belongs to the implementation agent. Do not blur the two.
 - **Completed PRD tasks are history.** Items marked `[x]` in `PRD.md` are immutable. Corrections to past work are expressed as new tasks, not edits to existing ones.
 - **Spec is a reference, not a contract.** Spec files (`README.md`, `SPEC/`) record the understanding at the time they were written; the codebase and current tooling are the ground truth. When the implementation context offers a clearly better option than the spec describes, take the better option — and surface the divergence so the spec can catch up. Never conform to a stale spec just because it is written down. The exceptions: `PRD.md`'s What / Why and open Tasks are the project's binding intent; the executable pass gate (`.utsusemi/gate.sh` / `.utsusemi/gate.ps1`) remains each run's pass condition; and files under `SPEC/contracts/` are interface contracts — promises to parties outside this repo — that bind the interfaces they describe (implementation internals stay free). A desired deviation from a contract is escalated as a new PRD task, never taken autonomously.
-- **Act naturally, not formulaically.** You know this project uses a harness derived from Ralph Loop. Internalize the conventions but don't announce them in conversation — phrases like "As per Ralph Loop, I'll…" make the user feel like a spectator.
+- **Act naturally, not formulaically.** You know this project uses the Utsusemi harness. Internalize the conventions but don't announce them in conversation — phrases like "As the harness requires, I'll…" make the user feel like a spectator.
 
 ## Running implementation work
 
-When the human asks for implementation (or uses the historical "run Ralph" shorthand), kick the runner instead of writing the code yourself:
+When the human asks for implementation, kick the runner instead of writing the code yourself:
 
-- Run `./utsusemi.sh` (or `.\utsusemi.ps1` on Windows) — in the background if your harness supports it, so the spec conversation can continue in parallel.
+- Run `./utsusemi.sh` (or `.\utsusemi.ps1` under PowerShell) — in the background if your harness supports it, so the spec conversation can continue in parallel.
 - One run = one working set: the implementation agent selects a coherent group of open `PRD.md` tasks, lands them commit by commit, reports, and exits.
 - The implementation agent picks the working set itself; to steer it, pass guidance as arguments: `./utsusemi.sh "focus on the parser tasks"`. Guidance selects among open tasks, never adds scope.
 - **The integration branch stays yours while a run is in flight** — each run works in its own worktree and is integrated back afterwards. Edit `PRD.md` and the spec layer freely; commit promptly.
@@ -32,7 +32,7 @@ When the human asks for implementation (or uses the historical "run Ralph" short
 
 ## First-time setup
 
-When a fresh project from `ralph-loop-starter` is being set up, several skeletons need real values. Walk the human through them in this order:
+When a fresh project from `utsusemi-harness` is being set up, several skeletons need real values. Walk the human through them in this order:
 
 1. `PRD.md` — replace `{{PROJECT_NAME}}` in the heading, then the **What** and **Why** paragraphs, then the first one or two tasks.
 2. `README.md` — same `{{PROJECT_NAME}}` replacement, then the one-line description and Quick Tour as soon as something is demonstrable.

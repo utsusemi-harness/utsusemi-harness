@@ -4,7 +4,7 @@ This is the Product Requirements Document. It owns three things: the project's *
 
 ## What
 
-> _One short paragraph: what this product is, in product terms. Update as scope sharpens. The conversational LLM is expected to propose updates here as understanding deepens — accept or modify in conversation._
+> _One short paragraph: what this product is, in product terms. Update as scope sharpens. The conversational agent is expected to propose updates here as understanding deepens — accept or modify in conversation._
 
 ## Why
 
