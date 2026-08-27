@@ -1,0 +1,9 @@
+# Text files are stored with LF in the repository.
+* text=auto
+
+# Shell scripts must reach the working tree as LF: a trailing CR leaks into
+# sourced values and breaks the runner wherever the checkout adds one.
+*.sh text eol=lf
+
+# PowerShell counterparts keep CRLF, matching the platform they run on.
+*.ps1 text eol=crlf
