@@ -10,7 +10,7 @@
 #     utsusemi/<run-id>, cut from the integration branch (whatever is checked
 #     out when the run starts); the agent CLI runs once inside it. The
 #     integration branch stays yours while the run is in flight: spec-layer
-#     edits and new PRD tasks can land on it at any time.
+#     edits and new tasks can land on it at any time.
 #   - After the agent exits, the run is integrated deterministically: rebase
 #     onto the integration branch, re-run the pass gate (.utsusemi/gate.ps1),
 #     fast-forward the branch, remove the worktree. On a rebase conflict or a red gate nothing is
@@ -68,7 +68,7 @@ function Wait-IntegrationLock {
 }
 
 function Assert-Claims {
-    $DoneIds = @(git -C $Wt diff "$Base..HEAD" -- PRD.md | Where-Object { $_ -match '^\+- \[x\] (T\d+):' } | ForEach-Object { $Matches[1] })
+    $DoneIds = @(git -C $Wt diff "$Base..HEAD" -- TASKS.md | Where-Object { $_ -match '^\+- \[x\] (T\d+):' } | ForEach-Object { $Matches[1] })
     foreach ($Id in $DoneIds) {
         $OwnerFile = ".utsusemi/claims/$Id/owner"
         $Owner = if (Test-Path -LiteralPath $OwnerFile) { (Get-Content -LiteralPath $OwnerFile -Raw).Trim() } else { '' }

@@ -58,8 +58,8 @@ Initialized at $Destination
 
 Next steps:
   Set-Location '$Destination'
-  # 1. Replace {{PROJECT_NAME}} placeholders and fill in PRD.md, README.md,
-  #    SPEC/SPEC.md, CONVENTIONS.md together with your conversational agent.
+  # 1. Replace {{PROJECT_NAME}} placeholders and fill in INTENT.md, TASKS.md,
+  #    README.md, SPEC/SPEC.md, CONVENTIONS.md together with your conversational agent.
   # 2. Stage and commit the initial files when ready.
   # 3. Ask your agent to start an implementation run (.\utsusemi.ps1) when the specs are in shape.
 "@

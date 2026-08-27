@@ -10,7 +10,7 @@
 #     utsusemi/<run-id>, cut from the integration branch (whatever is checked
 #     out when the run starts); the agent CLI runs once inside it. The
 #     integration branch stays yours while the run is in flight: spec-layer
-#     edits and new PRD tasks can land on it at any time.
+#     edits and new tasks can land on it at any time.
 #   - After the agent exits, the run is integrated deterministically: rebase
 #     onto the integration branch, re-run the pass gate (.utsusemi/gate.sh),
 #     fast-forward the branch, remove the worktree. On a rebase conflict or a red gate nothing is
@@ -87,7 +87,7 @@ enforce_claims() {
       echo "INTEGRATE REFUSED: $id was checked off without an owned claim; worktree kept at $wt." >&2
       exit 7
     fi
-  done < <(git -C "$wt" diff "$base"..HEAD -- PRD.md | sed -n 's/^+- \[x\] \(T[0-9][0-9]*\):.*/\1/p')
+  done < <(git -C "$wt" diff "$base"..HEAD -- TASKS.md | sed -n 's/^+- \[x\] \(T[0-9][0-9]*\):.*/\1/p')
 }
 
 release_claims() {
