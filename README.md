@@ -30,27 +30,57 @@ Each run is one cicada. It grows in a worktree of its own, on a branch named `ut
 - **Guided by an orchestrator.** Pass guidance as arguments — `./utsusemi.sh "focus on the parser tasks"`. Your conversational agent uses this to keep several runs going at once, giving each one a different part of the ledger.
 - **Self-selected.** Start the runner with no arguments — `./utsusemi.sh`. The agent reads the open tasks and takes a set that belongs together.
 
-## Usage
+## Install as an agent skill
 
-Clone or copy this repository, then run the bootstrap from a normal shell — no AI involved at this step.
+The repository is a self-contained [Agent Skill](https://agentskills.io). For example, install it from GitHub for Claude Code with:
 
 ```sh
-./init.sh ~/projects/my-new-project        # bash
-.\init.ps1 $HOME\projects\my-new-project   # PowerShell
+gh skill install hainet50b/utsusemi-harness utsusemi-harness --agent claude-code --scope user
 ```
 
-Move into the new project and start your conversational agent (Claude Code, Codex, etc.) from there:
+Install it for whichever agent you prefer. For Codex or OpenCode, use `codex` or `opencode` for `--agent` instead of `claude-code`.
+
+## Usage
+
+### Bootstrap with the skill
+
+1. Start Claude from any directory. It does not need to be the future project directory.
+
+   ```sh
+   claude
+   ```
+
+   Use whichever agent you prefer; for example, run `codex` or `opencode` instead.
+
+2. Ask it to create an Utsusemi project. At this point, a description just detailed enough to inspire a provisional name is sufficient; first-time setup explores the idea after initialization.
+
+   > _Create a new Utsusemi project. I want to make [a brief description], but I do not have a name yet._
+
+3. When asked where to initialize it, choose the current directory or a new location. If the project has no name yet, the skill helps choose a provisional project and directory name first.
+
+After initialization, continue in the same agent session. The agent asks what it needs to know, and the first version of the spec takes shape as you answer. When it is ready, ask the agent to start an implementation run; it runs `./utsusemi.sh` (`.\utsusemi.ps1` on Windows) for you.
+
+### Manual bootstrap
+
+You can still clone or copy this repository and run the initializer directly from a normal shell.
+
+```sh
+./init.sh ~/projects/my-new-project        # Linux / macOS
+.\init.ps1 $HOME\projects\my-new-project   # Windows
+```
+
+Move into the new project and start your conversational agent:
 
 ```sh
 cd ~/projects/my-new-project
-claude        # or your agent of choice
+claude        # or codex / opencode
 ```
 
 A useful first prompt is something like:
 
-> _I just initialized a project from utsusemi-harness here. I want to build [a short description of what you have in mind]. Walk me through first-time setup._
+> _I initialized a new Utsusemi project here. I want to make [a brief description]. Guide me through first-time setup._
 
-The agent reads `AGENTS.md` and `CLAUDE.md` in the new project, then asks you what it needs to know. You answer, and the first version of the spec takes shape out of that conversation. When it is in shape, ask the agent to start an implementation run, and it kicks `./utsusemi.sh` for you.
+The agent asks what it needs to know, and the first version of the spec takes shape as you answer. When it is ready, ask the agent to start an implementation run; it runs `./utsusemi.sh` (`.\utsusemi.ps1` on Windows) for you.
 
 ## What gets created
 

@@ -20,7 +20,7 @@ This project uses the [Utsusemi harness](https://github.com/hainet50b/utsusemi-h
 
 When the human asks for implementation, kick the runner instead of writing the code yourself:
 
-- Run `./utsusemi.sh` (or `.\utsusemi.ps1` under PowerShell) — in the background if your harness supports it, so the spec conversation can continue in parallel.
+- Run `./utsusemi.sh` (or `.\utsusemi.ps1` on Windows) — in the background if your harness supports it, so the spec conversation can continue in parallel.
 - One run = one working set: the implementation agent selects a coherent group of open `TASKS.md` tasks, lands them commit by commit, reports, and exits.
 - The implementation agent picks the working set itself; to steer it, pass guidance as arguments: `./utsusemi.sh "focus on the parser tasks"`. Guidance selects among open tasks, never adds scope.
 - **The integration branch stays yours while a run is in flight** — each run works in its own worktree and is integrated back afterwards. Edit `TASKS.md` and the spec layer freely; commit promptly.

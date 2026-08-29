@@ -1,5 +1,5 @@
 #!/usr/bin/env pwsh
-# init.ps1 — bootstrap a new project from this template (PowerShell).
+# init.ps1 — bootstrap a new project from this template.
 #
 # Usage:
 #   ./init.ps1 <destination-path>
