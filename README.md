@@ -44,13 +44,13 @@ Install it for whichever agent you prefer. For Codex or OpenCode, use `codex` or
 
 ### Initialize with the skill
 
-1. Start Claude from any directory. It does not need to be the future project directory.
+1. Start an agent from any directory. It does not need to be the future project directory. For example, with Claude Code:
 
    ```sh
    claude
    ```
 
-   Use whichever agent you prefer; for example, run `codex` or `opencode` instead.
+   Use whichever agent you prefer; `codex` and `opencode` work too.
 
 2. Ask it to create an Utsusemi project. At this point, a description just detailed enough to inspire a provisional name is sufficient; first-time setup explores the idea after initialization.
 
