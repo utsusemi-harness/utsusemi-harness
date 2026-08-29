@@ -48,18 +48,17 @@ Get-ChildItem -Force -LiteralPath $Source | ForEach-Object {
 Push-Location -LiteralPath $Destination
 try {
     & git init -b main | Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        throw "git init failed with exit code $LASTEXITCODE."
+    }
 }
 finally {
     Pop-Location
 }
 
 @"
-Initialized at $Destination
+Initialized Utsusemi project at $Destination
 
-Next steps:
-  Set-Location '$Destination'
-  # 1. Replace {{PROJECT_NAME}} placeholders and fill in INTENT.md, TASKS.md,
-  #    README.md, SPEC/SPEC.md, CONVENTIONS.md together with your conversational agent.
-  # 2. Stage and commit the initial files when ready.
-  # 3. Ask your agent to start an implementation run (.\utsusemi.ps1) when the specs are in shape.
+Next: ask your conversational agent to guide the first-time setup.
+It will follow the project instructions in AGENTS.md.
 "@

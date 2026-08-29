@@ -50,12 +50,8 @@ chmod +x "$DEST/utsusemi.sh"
 )
 
 cat <<EOF
-Initialized at $DEST
+Initialized Utsusemi project at $DEST
 
-Next steps:
-  cd $DEST
-  # 1. Replace {{PROJECT_NAME}} placeholders and fill in INTENT.md, TASKS.md,
-  #    README.md, SPEC/SPEC.md, CONVENTIONS.md together with your conversational agent.
-  # 2. Stage and commit the initial files when ready.
-  # 3. Ask your agent to start an implementation run (./utsusemi.sh) when the specs are in shape.
+Next: ask your conversational agent to guide the first-time setup.
+It will follow the project instructions in AGENTS.md.
 EOF
