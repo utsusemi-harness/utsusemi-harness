@@ -2,7 +2,7 @@
 
 A harness that separates _spec_ from _implementation_. You and a conversational agent keep the spec; implementation agents write the code. Neither side waits for the other: you keep writing tasks while several implementation agents land the ones already written.
 
-This repository bootstraps the harness into a new project. It is intentionally minimal. What it puts in the project is markdown files and a few short scripts. There is no binary to install, no service to run, and no abstraction to learn beyond reading those files.
+This repository initializes a new project with the harness. It is intentionally minimal. What it puts in the project is markdown files and a few short scripts. There is no binary to install, no service to run, and no abstraction to learn beyond reading those files.
 
 ## The name
 
@@ -42,7 +42,7 @@ Install it for whichever agent you prefer. For Codex or OpenCode, use `codex` or
 
 ## Usage
 
-### Bootstrap with the skill
+### Initialize with the skill
 
 1. Start Claude from any directory. It does not need to be the future project directory.
 
@@ -60,7 +60,7 @@ Install it for whichever agent you prefer. For Codex or OpenCode, use `codex` or
 
 After initialization, continue in the same agent session. The agent asks what it needs to know, and the first version of the spec takes shape as you answer. When it is ready, ask the agent to start an implementation run; it runs `./utsusemi.sh` (`.\utsusemi.ps1` on Windows) for you.
 
-### Manual bootstrap
+### Manual initialization
 
 You can still clone or copy this repository and run the initializer directly from a normal shell.
 

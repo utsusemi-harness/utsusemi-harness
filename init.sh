@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# init.sh — bootstrap a new project from this template.
+# init.sh — initialize a new project from this template.
 #
 # Usage:
 #   ./init.sh <destination-path>
