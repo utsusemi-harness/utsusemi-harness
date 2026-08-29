@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# init.sh — initialize a new project from this template.
+#
+# Usage:
+#   ./init.sh <destination-path>
+#
+# Behavior:
+#   1. Copies _project/ to the destination path.
+#   2. Makes utsusemi.sh executable.
+#   3. Runs `git init -b main`.
+#
+# The template files leave {{PROJECT_NAME}} placeholders literal. The
+# conversational agent driving setup is expected to replace them as part of
+# first-time setup, alongside filling in the substantive spec sections.
+# See AGENTS.md in the generated project for the order of attention.
+#
+# Notes:
+#   - Refuses to overwrite an existing non-empty destination.
+
+set -euo pipefail
+
+if [[ $# -ne 1 ]]; then
+  echo "usage: $0 <destination-path>" >&2
+  exit 1
+fi
+
+DEST="$1"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SOURCE="$SCRIPT_DIR/_project"
+
+if [[ ! -d "$SOURCE" ]]; then
+  echo "error: $SOURCE not found; run this script from inside the template repo." >&2
+  exit 1
+fi
+
+if [[ -e "$DEST" ]] && [[ -n "$(ls -A "$DEST" 2>/dev/null || true)" ]]; then
+  echo "error: $DEST already exists and is not empty." >&2
+  exit 1
+fi
+
+mkdir -p "$DEST"
+cp -r "$SOURCE"/. "$DEST"/
+
+chmod +x "$DEST/utsusemi.sh"
+
+(
+  cd "$DEST"
+  git init -b main >/dev/null
+)
+
+cat <<EOF
+Initialized Utsusemi project at $DEST
+
+Next: ask your conversational agent to guide the first-time setup.
+It will follow the project instructions in AGENTS.md.
+EOF

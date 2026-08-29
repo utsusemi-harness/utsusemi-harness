@@ -84,7 +84,7 @@ The agent asks what it needs to know, and the first version of the spec takes sh
 
 ## What gets created
 
-`init.sh` (or `init.ps1`) copies `_project/` into a destination directory and runs `git init`:
+`init.sh` (or `init.ps1`) copies the bundled project template into a destination directory and runs `git init`:
 
 ```
 my-new-project/

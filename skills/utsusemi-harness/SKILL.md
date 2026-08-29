@@ -16,8 +16,8 @@ description: Initialize a brand-new project from the bundled Utsusemi harness, i
 
 Resolve paths relative to this `SKILL.md`; do not assume the skill is installed at a fixed location.
 
-- On Linux or macOS, run `init.sh` with the destination as its single argument.
-- On Windows, run `init.ps1` with the destination as its single argument.
+- On Linux or macOS, run `bash init.sh` with the destination as its single argument.
+- On Windows, invoke `init.ps1` with the destination as its single argument.
 - Pass the destination as one quoted argument. Do not copy `_project/` yourself and do not download another copy of the harness.
 - Let the initializer decide whether the destination is acceptable. Do not duplicate its validation or override a refusal.
 
