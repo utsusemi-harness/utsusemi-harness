@@ -33,7 +33,9 @@ When the human asks for implementation, kick the runner instead of writing the c
 
 ## First-time setup
 
-When a fresh project from `utsusemi-harness` is being set up, several skeletons need real values. Walk the human through them in this order:
+When a fresh project from `utsusemi-harness` is being set up, first settle the commit identity — every commit in this repo, including the implementation agent's, will carry it. Run `git config user.name` and `git config user.email` in the repo, show the human what resolves (values may be inherited from global config), and ask whether commits here should carry that identity. If nothing resolves or the human wants a different one, set it locally with `git config user.name "…"` and `git config user.email "…"`. Do this before the first commit.
+
+Several skeletons then need real values. Walk the human through them in this order:
 
 1. `INTENT.md` — replace `{{PROJECT_NAME}}` in the heading, then **What** and **Why**. Hold both to a sentence or two: anything that would sit happily in `README.md` belongs there instead, and what stays is only what you would want the code doubted over.
 2. `TASKS.md` — same `{{PROJECT_NAME}}` replacement, then the first one or two tasks.
