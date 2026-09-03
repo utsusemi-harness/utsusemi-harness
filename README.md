@@ -35,7 +35,7 @@ Each run is one cicada. It grows in a worktree of its own, on a branch named `ut
 The repository is a self-contained [Agent Skill](https://agentskills.io). For example, install it from GitHub for Claude Code with:
 
 ```sh
-gh skill install hainet50b/utsusemi-harness utsusemi-harness --agent claude-code --scope user
+gh skill install utsusemi-harness/utsusemi-harness utsusemi-harness --agent claude-code --scope user
 ```
 
 Install it for whichever agent you prefer. For Codex or OpenCode, use `codex` or `opencode` for `--agent` instead of `claude-code`.

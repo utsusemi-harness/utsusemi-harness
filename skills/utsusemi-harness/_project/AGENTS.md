@@ -1,6 +1,6 @@
 # AGENTS.md
 
-This project uses the [Utsusemi harness](https://github.com/hainet50b/utsusemi-harness). It separates spec (human + conversational agent) from implementation (an implementation agent). Before acting, scan the relevant files in this repo to understand the current state:
+This project uses the [Utsusemi harness](https://github.com/utsusemi-harness/utsusemi-harness). It separates spec (human + conversational agent) from implementation (an implementation agent). Before acting, scan the relevant files in this repo to understand the current state:
 
 - `INTENT.md` — the project's binding intent: What / Why, and any Non-goals
 - `TASKS.md` — the open and closed task ledger
